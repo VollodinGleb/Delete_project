@@ -29,4 +29,61 @@ class Human {
 
 const person = new Human("John", 30, 70, "Male");
 
-alert(person.getInfo('age'));
+// alert(person.getInfo('age'));
+
+// Task 6
+class Man extends Human {
+    constructor(name, age, weight) {
+        // Виклик конструктора базового класу
+        super(name, age, weight, "Male");
+    }
+
+    greeting() {
+        return `Hi! My name is ${this.name}, and I am ${this.age} years old.`;
+    }
+}
+
+class Woman extends Human {
+    constructor(name, age, weight) {
+        // Виклик конструктора базового класу
+        super(name, age, weight, "Female");
+    }
+
+    greeting() {
+        return `Hi! My name is ${this.name}.`;
+    }
+}
+
+const john = new Man("John", 30, 70);
+const jane = new Woman("Jane", 25, 60);
+
+
+// alert(john.greeting());
+// alert(jane.greeting());
+
+// Task 7
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const people = [];
+
+for (let i = 0; i < 15; i++) {
+    const randomName = `Person${i + 1}`;
+    const randomAge = getRandomInt(20, 40);
+    const randomWeight = getRandomInt(50, 90);
+
+    const randomGender = getRandomInt(0, 1) === 0 ? "Male" : "Female";
+
+    const person = randomGender === "Male"
+        ? new Man(randomName, randomAge, randomWeight)
+        : new Woman(randomName, randomAge, randomWeight);
+
+    people.push(person);
+}
+
+// Перевірка результату
+for (const person of people) {
+    alert(person.getInfo());
+    alert(person.greeting());
+}
