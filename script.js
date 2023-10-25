@@ -1,6 +1,18 @@
 // 2 task
-let func = (age="18", name) => `My name is ${name}, I am ${age}.`;
-// alert(func("Glebus"));
+const date = new Date().getFullYear();
+
+let getAgeInfo = (name, birthYear=date) => {
+    if (birthYear === null) {
+        return `Я ${name}.`;
+    } else {
+        let age = date - birthYear;
+        return `Я ${name}, мені ${age} років.`;
+    }
+};
+
+console.log(date);
+alert(getAgeInfo("Glebus", 2003));
+
 
 // 3 task
 class Human {
@@ -29,7 +41,7 @@ class Human {
 
 const person = new Human("John", 30, 70, "Male");
 
-// alert(person.getInfo('age'));
+alert(person.getInfo('age'));
 
 // Task 6
 class Man extends Human {
@@ -58,8 +70,8 @@ const john = new Man("John", 30, 70);
 const jane = new Woman("Jane", 25, 60);
 
 
-// alert(john.greeting());
-// alert(jane.greeting());
+alert(john.greeting());
+alert(jane.greeting());
 
 // Task 7
 function getRandomInt(min, max) {
@@ -87,3 +99,30 @@ for (const person of people) {
     alert(person.getInfo());
     alert(person.greeting());
 }
+
+const searchPeople = (list, searchField, searchValue) => {
+    const delay = 1000; // Затримка у мілісекундах
+
+
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const results = list.filter(person => person[searchField] === searchValue);
+
+
+            if (results.length > 0) {
+                resolve(results);
+            } else {
+                reject(`За пошуком по ${searchField}:${searchValue} не знайдено.`);
+            }
+        }, delay);
+    });
+};
+
+searchPeople(people, "name", "Person7")
+    .then(results => {
+        console.log("Результати пошуку:");
+        for (const person of results) {
+            console.log(person.getInfo(null));
+        }
+    })
+    .catch(errorMessage => console.log(errorMessage));
