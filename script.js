@@ -1,17 +1,17 @@
 // 2 task
-const date = new Date().getFullYear();
+const year_now = new Date().getFullYear();
 
-let getAgeInfo = (name, birthYear=date) => {
+let getAgeInfo = (name, birthYear=year_now) => {
     if (birthYear === null) {
         return `Я ${name}.`;
     } else {
-        let age = date - birthYear;
+        let age = year_now - birthYear;
         return `Я ${name}, мені ${age} років.`;
     }
 };
 
-console.log(date);
-alert(getAgeInfo("Glebus", 2003));
+// console.log(year_now);
+// alert(getAgeInfo("Valentina", 2005));
 
 
 // 3 task
@@ -41,7 +41,7 @@ class Human {
 
 const person = new Human("John", 30, 70, "Male");
 
-alert(person.getInfo('age'));
+// alert(person.getInfo('age'));
 
 // Task 6
 class Man extends Human {
@@ -70,8 +70,8 @@ const john = new Man("John", 30, 70);
 const jane = new Woman("Jane", 25, 60);
 
 
-alert(john.greeting());
-alert(jane.greeting());
+// alert(john.greeting());
+// alert(jane.greeting());
 
 // Task 7
 function getRandomInt(min, max) {
@@ -96,8 +96,8 @@ for (let i = 0; i < 15; i++) {
 
 // Перевірка результату
 for (const person of people) {
-    alert(person.getInfo());
-    alert(person.greeting());
+    // alert(person.getInfo());
+    // alert(person.greeting());
 }
 
 const searchPeople = (list, searchField, searchValue) => {
@@ -118,7 +118,7 @@ const searchPeople = (list, searchField, searchValue) => {
     });
 };
 
-searchPeople(people, "name", "Person7")
+searchPeople(people, "name", "Person2")
     .then(results => {
         console.log("Результати пошуку:");
         for (const person of results) {
@@ -126,3 +126,4 @@ searchPeople(people, "name", "Person7")
         }
     })
     .catch(errorMessage => console.log(errorMessage));
+
