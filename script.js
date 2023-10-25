@@ -11,7 +11,7 @@ let getAgeInfo = (name, birthYear=year_now) => {
 };
 
 // console.log(year_now);
-// alert(getAgeInfo("Valentina", 2005));
+alert(getAgeInfo("Volodin", 2003));
 
 
 // 3 task
@@ -118,7 +118,7 @@ const searchPeople = (list, searchField, searchValue) => {
     });
 };
 
-searchPeople(people, "name", "Person2")
+searchPeople(people, "name", "Person7")
     .then(results => {
         console.log("Результати пошуку:");
         for (const person of results) {
