@@ -1,12 +1,15 @@
 import React from 'react';
-import './Header.css';
+import './style/sidebar.css';
 
-const Header = ({ title }) => {
+const SideBar = ({ title }) => {
   return (
-    <header className="header">
-      <h1>{title}</h1>
-    </header>
+    <div class="sidenav">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+    </div>
   );
 };
 
-export default Header;
+export default SideBar;
