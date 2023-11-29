@@ -10,7 +10,7 @@ import './App.css';
 function App() {
   return (
     <div className="app">
-      <Header title="Header" />
+      <Header title="H`eader" />
       <div className="main-content">
         <SideBar title="SideBar" />
         <Content title="Content" />
