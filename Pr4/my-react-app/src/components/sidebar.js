@@ -1,13 +1,12 @@
 import React from 'react';
 import './style/sidebar.css';
+import Menu from './menu';
 
-const SideBar = ({ title }) => {
+const SideBar = ({ title, menuList }) => {
   return (
-    <div class="sidenav">
-      <a href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
+    <div className="sidenav">
+      <h2>{title}</h2>
+      <Menu list={menuList} />
     </div>
   );
 };
