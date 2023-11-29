@@ -1,7 +1,7 @@
 import React from 'react';
 import './style/content.css';
 
-const Header = ({ title }) => {
+const Content = ({ title }) => {
   return (
     <section className="content">
       <h1>{title}</h1>
@@ -10,4 +10,4 @@ const Header = ({ title }) => {
   );
 };
 
-export default Header;
+export default Content;
