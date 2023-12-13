@@ -1,31 +1,28 @@
 // Task2
 function fibonacci(n) {
-    if (n <= 1) {
-        return n;
-    } else {
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
+
 
 let num = 22
 const fibNumber = fibonacci(num);
-// console.log(`Число Фібоначчі з номером ${num}: ${fibNumber}`);
+console.log(`Число Фібоначчі з номером ${num}: ${fibNumber}`);
 
 // Task3
-// function filter(handler, arr) {
-//     const result = [];
+function filter(handler, arr) {
+     const result = [];
 
-//     for (let i = 0; i < arr.length; i++) {
-//         if (handler(arr[i])) {
-//             result.push(arr[i]);
-//         }
-//     }
+     for (let i = 0; i < arr.length; i++) {
+         if (handler(arr[i])) {
+             result.push(arr[i]);
+         }
+     }
 
-//     return result;
-// }
+     return result;
+}
 
-// let list = [22, 12, 43, 23, 7, 17, 123, 76, 1, 3, 26, 33, 11, 100];
-// const filteredList = filter((a) => a % 2, list);
+let list = [22, 12, 43, 23, 7, 17, 123, 76, 1, 3, 26, 33, 11, 100];
+const filteredList = filter((a) => a % 2, list);
 
 // console.log(list)
 // console.log(filteredList);
@@ -117,7 +114,7 @@ const minValue = 10;
 
 // Task7
 function sum(handler) {
-    return function calc() {
+    return function calc() {    
         const numbers = handler();
         const totalSum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
         return totalSum;
@@ -128,4 +125,4 @@ const handler = () => [1, 2, 3];
 const calc = sum(handler);
 
 const result = calc();
-console.log(result);
+// console.log(result);
